@@ -6,9 +6,12 @@ import TransactionList from './components/TransactionList';
 import AddTransaction from './components/AddTransaction';
 import Login from './screens/Login';
 import Register from './screens/Register';
+import { Route, Routes } from 'react-router-dom';
+
 
 import { GlobalProvider } from "./context/GlobalState";
  import "./App.css";
+
 
 function App() {
 
@@ -19,24 +22,25 @@ function App() {
 
   return (
     <GlobalProvider>
+    
       <Header />
       <div className="container">
         <Balance />
-        
         <IncomeExpenses />
         <TransactionList />
-        <AddTransaction/>
+        <AddTransaction />
       </div>
     </GlobalProvider>
-
-   
   );
+    
+   
+  
   
   return (
     <Routes>
       <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/home" element={<Home />} />
+    
     </Routes>
   );
 }
